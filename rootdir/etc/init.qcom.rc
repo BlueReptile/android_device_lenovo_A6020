@@ -42,12 +42,19 @@ on early-init
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 on init
+<<<<<<< HEAD
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
+=======
+    # Symbols required for motorola blobs
+    export LD_SHIM_LIBS /system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so:/system/vendor/lib/lib-imsvt.so|libshim_ims.so:/system/bin/adspd|libshim_adsp.so:/system/lib/libandroid.so|libshim_ril.so:/system/vendor/lib/libizat_core.so:libshims_get_process_name.so
+
+    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+>>>>>>> bc64085... gps: Add get_process_name shim
 
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
-    export LD_SHIM_LIBS "/system/lib64/libril.so|libshim_ril.so:/system/vendor/lib/libmmcamera2_stats_modules.so|libshim_gui.so:/system/vendor/lib/libmmcamera2_stats_modules.so|libshim_atomic.so:/system/lib/hw/camera.vendor.msm8916.so|libshim_atomic.so:/system/lib/libmmjpeg_interface.so|libshim_atomic.so:/system/vendor/lib64/libril-qc-qmi-1.so|rild_socket.so:/system/vendor/lib64/libflp.so|libshims_flp.so:/system/vendor/lib64/libizat_core.so|libshims_get_process_name.so:/system/vendor/lib/hw/sound_trigger.primary.msm8916.so|libshim_atomic.so"
+    export LD_SHIM_LIBS "/system/lib64/libril.so|libshim_ril.so:/system/vendor/lib/libmmcamera2_stats_modules.so|libshim_gui.so:/system/vendor/lib/libmmcamera2_stats_modules.so|libshim_atomic.so:/system/lib/hw/camera.vendor.msm8916.so|libshim_atomic.so:/system/lib/libmmjpeg_interface.so|libshim_atomic.so:/system/vendor/lib64/libril-qc-qmi-1.so|rild_socket.so:/system/vendor/lib64/libflp.so|libshims_flp.so:/system/vendor/lib64/libizat_core.so|libshims_get_process_name.so:/system/vendor/lib/hw/sound_trigger.primary.msm8916.so|libshim_atomic.so:/system/vendor/lib/hw/libgeofence.so:libshims_get_process_name.so"
 
     # Enable power-on alarm
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
