@@ -15,12 +15,7 @@
 # limitations under the License.
 
 $(call inherit-product, device/lenovo/A6020/full_A6020.mk)
-
-# Inherit some common AOSP stuff.
-TARGET_ARCH := arm64
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_DENSITY := xxhdpi
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/cardinal/common.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -29,4 +24,4 @@ TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := A6020
-PRODUCT_NAME := aosp_A6020
+PRODUCT_NAME := cardinal_A6020

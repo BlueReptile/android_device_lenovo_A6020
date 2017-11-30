@@ -1,2 +1,2 @@
-add_lunch_combo aosp_A6020-userdebug
-add_lunch_combo aosp_A6020-user
+add_lunch_combo cardinal_A6020-userdebug
+add_lunch_combo cardinal_A6020-user
