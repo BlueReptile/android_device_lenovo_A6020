@@ -60,7 +60,6 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-<<<<<<< HEAD
 LOCAL_SRC_FILES:= \
 	camera/Camera.cpp \
 	camera/CameraMetadata.cpp \
