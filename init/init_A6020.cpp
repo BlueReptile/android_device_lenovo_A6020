@@ -145,44 +145,44 @@ void vendor_load_properties()
 void gsm_properties(bool msim)
 {
     if (msim) {
-        property_set("persist.radio.multisim.config", "dsds");
-        //property_set("ro.telephony.ril.config", "simactivation");
-        property_set("ro.telephony.default_network", "9,9");
+        android::init::property_set("persist.radio.multisim.config", "dsds");
+        //android::init::property_set("ro.telephony.ril.config", "simactivation");
+        android::init::property_set("ro.telephony.default_network", "9,9");
     } else {
-        property_set("persist.radio.multisim.config", "");
-        property_set("ro.telephony.default_network", "9");
+        android::init::property_set("persist.radio.multisim.config", "");
+        android::init::property_set("ro.telephony.default_network", "9");
     }
 }
 
 void set_model_config(bool plus){
     if (plus){
-        property_set("ro.sf.lcd_density", "480");
-        property_override("ro.product.name", "Vibe K5 Plus");
+        android::init::property_set("ro.sf.lcd_density", "480");
+        android::init::property_override("ro.product.name", "Vibe K5 Plus");
 
 	/* Dalvik properties
          *
          * https://github.com/CyanogenMod/android_frameworks_native/blob/cm-14.1/build/phone-xxhdpi-2048-dalvik-heap.mk
          */
-        property_set("dalvik.vm.heapstartsize", "16m");
-        property_set("dalvik.vm.heapgrowthlimit", "192m");
-        property_set("dalvik.vm.heapsize", "512m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
-        property_set("dalvik.vm.heapminfree", "2m");
-        property_set("dalvik.vm.heapmaxfree", "8m");
+        android::init::property_set("dalvik.vm.heapstartsize", "16m");
+        android::init::property_set("dalvik.vm.heapgrowthlimit", "192m");
+        android::init::property_set("dalvik.vm.heapsize", "512m");
+        android::init::property_set("dalvik.vm.heaptargetutilization", "0.75");
+        android::init::property_set("dalvik.vm.heapminfree", "2m");
+        android::init::property_set("dalvik.vm.heapmaxfree", "8m");
     } else {
-        property_set("ro.sf.lcd_density", "320");
-        property_override("ro.product.name", "Vibe K5");
+        android::init::property_set("ro.sf.lcd_density", "320");
+        android::init::property_override("ro.product.name", "Vibe K5");
 
         /* Dalvik properties
          *
          * https://github.com/CyanogenMod/android_frameworks_native/blob/cm-14.1/build/phone-xhdpi-2048-dalvik-heap.mk
          */
-        property_set("dalvik.vm.heapstartsize", "8m");
-        property_set("dalvik.vm.heapgrowthlimit", "192m");
-        property_set("dalvik.vm.heapsize", "512m");
-        property_set("dalvik.vm.heaptargetutilization", "0.75");
-        property_set("dalvik.vm.heapminfree", "512k");
-        property_set("dalvik.vm.heapmaxfree", "8m");
+        android::init::property_set("dalvik.vm.heapstartsize", "8m");
+        android::init::property_set("dalvik.vm.heapgrowthlimit", "192m");
+        android::init::property_set("dalvik.vm.heapsize", "512m");
+        android::init::property_set("dalvik.vm.heaptargetutilization", "0.75");
+        android::init::property_set("dalvik.vm.heapminfree", "512k");
+        android::init::property_set("dalvik.vm.heapmaxfree", "8m");
     }
 }
 
